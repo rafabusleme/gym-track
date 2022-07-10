@@ -1,23 +1,34 @@
-# Getting Started with Create React App
+# GymTrack - A new way to check your gym progress
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Static Site built with React + Typescript
+
+Author: Rafael Abusleme
+
+## Backlog - GymTrack Board
+
+To see the project progress and visualize the past/current/future features click the following link [GymTrack - Board](https://trello.com/b/f7aWpTY8/gymtrack).
+
+## Requirenments
+
+- Node v16.X [https://nodejs.org/](https://nodejs.org/)
 
 ## Available Scripts
 
 In the project directory, you can run:
 
+### `npm install`
+
+Install project dependencies. This step is required for running the following scripts.
+
 ### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Runs the app. Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Example: `npm start:dev`
 
 ### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Launches the test runner in the interactive watch mode.
 
 ### `npm run build`
 
@@ -27,20 +38,64 @@ It correctly bundles React in production mode and optimizes the build for the be
 The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### `npm run lint`
 
-### `npm run eject`
+Run linters on project code and throw warnings/errors based on defined rules.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### `npm run format`
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Format code based on defined prettier rules.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Folder structure
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+```
+envs/
+public/
+src/
+  App.tsx
+  index.tsx
+  index.scss
+  assets/
+  pages/
+  shared/
+    components/
+    constants/
+    context/
+    hooks/
+    interfaces/
+    mocks/
+    services/
+    utils/
+  theme/
+.eslintrc.json
+.prettierrc
+CHANGELOG.md
+package.json
+README.md
+tsconfig.json
+```
 
-## Learn More
+- `envs/` contains env variables for each environment
+- `App.tsx` main component of the project
+- `index.tsx` renders the app
+- `index.scss` global styles
+- `assets/` contains icons, images, fonts, etc
+- `pages/` contains React Components used as a view
+- `shared/` contains reusable logic
+- `components/` contains reusable React Components
+- `constants/` contains constants values
+- `context/` contains components for share global states using Context API
+- `hooks/` contains reusable component state logic
+- `interfaces/` contains interfaces for typescript
+- `services/` contains logic to interact with external services
+- `utils/` contains generic logic to use across de app
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Versioning
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+All changes must to be included in the `CHANGELOG.md` file, using _Semantic Versioning_ (https://semver.org/spec/v2.0.0.html)
+
+## Code conventions
+
+- Use PascalCase for React Components
+- Use camelCase for variables, methods, filenames, etc
+- Commits standard based on [this document](https://dev.to/i5han3/git-commit-message-convention-that-you-can-follow-1709)
