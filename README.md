@@ -99,3 +99,4 @@ All changes must to be included in the `CHANGELOG.md` file, using _Semantic Vers
 - Use PascalCase for React Components
 - Use camelCase for variables, methods, filenames, etc
 - Commits standard based on [this document](https://dev.to/i5han3/git-commit-message-convention-that-you-can-follow-1709)
+- Use BEM for css class naming [BEM](http://getbem.com/).
