@@ -2,6 +2,8 @@
 
 Static Site built with React + Typescript
 
+Site link: https://gym-track-sports.netlify.app/
+
 Author: Rafael Abusleme
 
 ## Backlog - GymTrack Board
