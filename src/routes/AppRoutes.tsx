@@ -2,11 +2,11 @@ import React from 'react';
 
 import { Route, Routes } from 'react-router-dom';
 
-import { HOME_ROUTE, METRICS_ROUTE, TRAININGS_ROUTE } from '../constants/routes';
-import AppLayout from '../layouts/AppLayout/AppLayout';
 import Home from '../pages/Home/Home';
 import Metrics from '../pages/Metrics/Metrics';
 import Trainings from '../pages/Trainings/Trainings';
+import { HOME_ROUTE, METRICS_ROUTE, TRAININGS_ROUTE } from '../shared/constants/routes';
+import AppLayout from '../shared/layouts/AppLayout/AppLayout';
 
 const AppRoutes = () => {
   return (
