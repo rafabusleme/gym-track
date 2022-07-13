@@ -28,6 +28,9 @@
       color: $quaternary-color;
       font-size: 20px;
       width: 100%;
+      @media screen and (max-width: $mobile) {
+        font-size: 16px;
+      }
     }
   }
 }

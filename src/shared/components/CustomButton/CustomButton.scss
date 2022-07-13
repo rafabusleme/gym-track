@@ -33,4 +33,11 @@
       color: $secondary-color;
     }
   }
+
+  &:disabled {
+    background-color: $primary-color;
+    &:hover { background-color: $primary-color; }
+    &:focus { background-color: $primary-color; }
+    cursor: not-allowed;
+  }
 }

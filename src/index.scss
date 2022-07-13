@@ -26,8 +26,6 @@ body {
 }
 
 /** Forms **/
-
-
 .auth-page {
   width: 100%;
   display: flex;
@@ -39,7 +37,8 @@ body {
     padding: 40px;
     border-radius: 10px;
     min-width: 400px;
-    height: 350px;
+    max-width: 600px;
+    height: 450px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -67,6 +66,10 @@ body {
       .link {
         margin-left: 5px;
       }
+    }
+    @media screen and (max-width: $mobile) {
+      min-width: unset;
+      width: 100%;
     }
   }
 }
