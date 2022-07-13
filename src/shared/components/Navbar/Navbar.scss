@@ -11,17 +11,17 @@
   background-color: $secondary-color;
   white-space: nowrap;
 
-  .navbar__header {
+  &__header {
     display: flex;
     width: 100%;
     margin-bottom: 44px;
   }
 
-  .navbar__menu {
+  &__menu {
     display: flex;
     flex-direction: column;
     width: 100%;
-    .navbar__menu__item {
+    &__item {
       display: flex;
       align-items: center;
       padding: 10px;
@@ -31,7 +31,7 @@
     }
   }
 
-  .navbar__footer {
+  &__footer {
     margin-top: auto;
     display: flex;
     align-items: center;
@@ -40,12 +40,12 @@
     cursor: pointer;
   }
 
-  .navbar__icon { 
+  &__icon { 
     display: flex;
     align-items: center;
     justify-content: center;      
     width: 24px;
     height: auto;
     margin: 0 15px 0 5px;
-    }
+  }
 }
