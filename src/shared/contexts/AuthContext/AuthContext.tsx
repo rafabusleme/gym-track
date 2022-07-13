@@ -1,6 +1,11 @@
 import React, { createContext, useContext, useState } from 'react';
 
-import { createUserWithEmailAndPassword, getAuth, signInWithEmailAndPassword } from 'firebase/auth';
+import {
+  createUserWithEmailAndPassword,
+  getAuth,
+  signInWithEmailAndPassword,
+  signOut,
+} from 'firebase/auth';
 import { useNavigate } from 'react-router-dom';
 
 import { HOME_ROUTE, LOGIN_ROUTE } from '../../constants/routes';
@@ -54,7 +59,12 @@ const AuthContextProvider: React.FC<AuthContextProviderProps> = ({ children }) =
 
   const sessionLogout = async () => {
     try {
+      const auth = getAuth();
+      await signOut(auth);
+
+      setUser(contextDefaultValues.user);
       setIsLoggedIn(false);
+
       navigate(LOGIN_ROUTE);
     } catch (error: unknown) {
       alert(error);

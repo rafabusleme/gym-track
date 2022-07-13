@@ -5,9 +5,12 @@ import LogoutIcon from '@mui/icons-material/Logout';
 import { useNavigate } from 'react-router-dom';
 
 import { NAVBAR_MENU_ITEMS } from '../../constants/navbar';
+import { useAuth } from '../../contexts/AuthContext/AuthContext';
+
 import './Navbar.scss';
 
 const Navbar = () => {
+  const { sessionLogout } = useAuth();
   const navigate = useNavigate();
 
   const renderNavbarMenu = () =>
@@ -24,7 +27,7 @@ const Navbar = () => {
         GymTrack
       </div>
       <div className='navbar__menu'>{renderNavbarMenu()}</div>
-      <div className='navbar__footer'>
+      <div className='navbar__footer' onClick={sessionLogout}>
         <div className='navbar__icon'>
           <LogoutIcon />
         </div>
