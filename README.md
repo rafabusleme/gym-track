@@ -6,7 +6,17 @@ Site link: https://gym-track-sports.netlify.app/
 
 Author: Rafael Abusleme
 
+## Why GymTrack?
+
+Monitoring your trainings sessions has always been a headache for everyone, directly affecting your progress and you don't really know if you are progressing.
+
+However, using GymTrack you can easily record your training sessions (exercises, reps, weights, time, etc) and see your real progress in a very friendly and effective way.
+
+Join to GymTrack, a new way to check your progress!
+
 ## Backlog - GymTrack Board
+
+Disclaimer: The project is in MVP phase, so many features haven't been developed.
 
 To see the project progress and visualize the past/current/future features click the following link [GymTrack - Board](https://trello.com/b/f7aWpTY8/gymtrack).
 
