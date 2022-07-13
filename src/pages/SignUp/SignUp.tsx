@@ -27,11 +27,16 @@ const SignUp = () => {
     passwordConfirm: inputs?.passwordConfirm,
   });
 
+  const isValidForm = () => {
+    return validation.isValidPassword() && inputs?.email;
+  };
+
   const hasError = () => {
-    return !validation.match || !validation.confirmPassIsFill || !validation.validLength;
+    return validation.confirmPassIsFill && !validation.isValidPassword();
   };
 
   const displayError = () => {
+    if (!validation.confirmPassIsFill) return '';
     if (!validation.match) return SIGN_UP_ERRORS['match'];
     if (!validation.validLength) return SIGN_UP_ERRORS['length'];
     if (!validation.confirmPassIsFill) return SIGN_UP_ERRORS['required'];
@@ -86,7 +91,7 @@ const SignUp = () => {
           buttonType='primary'
           action={handleSubmit}
           loading={loading}
-          disabled={!validation.isValidPassword()}
+          disabled={!isValidForm()}
         >
           Sign Up
         </CustomButton>
