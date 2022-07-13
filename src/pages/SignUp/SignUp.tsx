@@ -4,10 +4,11 @@ import { TextField } from '@mui/material';
 import { Link } from 'react-router-dom';
 
 import CustomButton from '../../shared/components/CustomButton/CustomButton';
-import { LOGIN_INPUTS } from '../../shared/constants/auth';
+import { LOGIN_INPUTS, SIGN_UP_ERRORS } from '../../shared/constants/auth';
 import { LOGIN_ROUTE } from '../../shared/constants/routes';
 import { useAuth } from '../../shared/contexts/AuthContext/AuthContext';
 import useForm from '../../shared/hooks/useForm/useForm';
+import { usePasswordValidation } from '../../shared/hooks/usePasswordValidation/usePasswordValidation';
 
 const SignUp = () => {
   const [loading, setLoading] = useState(false);
@@ -20,6 +21,21 @@ const SignUp = () => {
   };
 
   const { inputs, handleInputChange, handleSubmit } = useForm(LOGIN_INPUTS, onSubmit);
+
+  const validation = usePasswordValidation({
+    password: inputs?.password,
+    passwordConfirm: inputs?.passwordConfirm,
+  });
+
+  const hasError = () => {
+    return !validation.match || !validation.confirmPassIsFill || !validation.validLength;
+  };
+
+  const displayError = () => {
+    if (!validation.match) return SIGN_UP_ERRORS['match'];
+    if (!validation.validLength) return SIGN_UP_ERRORS['length'];
+    if (!validation.confirmPassIsFill) return SIGN_UP_ERRORS['required'];
+  };
 
   return (
     <div className='auth-page'>
@@ -46,13 +62,15 @@ const SignUp = () => {
             required
           />
           <TextField
-            id='login-password-input'
+            error={hasError()}
+            id='login-password-confirm-input'
             label='Confirm password'
-            name='password-confirm'
+            name='passwordConfirm'
             variant='standard'
             type='password'
             onChange={handleInputChange}
             value={inputs.passwordConfirm}
+            helperText={displayError()}
             required
           />
         </div>
@@ -64,7 +82,12 @@ const SignUp = () => {
           </Link>
         </div>
 
-        <CustomButton buttonType='primary' action={handleSubmit} loading={loading}>
+        <CustomButton
+          buttonType='primary'
+          action={handleSubmit}
+          loading={loading}
+          disabled={!validation.isValidPassword()}
+        >
           Sign Up
         </CustomButton>
       </div>

@@ -21,6 +21,8 @@ const Login = () => {
 
   const { inputs, handleInputChange, handleSubmit } = useForm(LOGIN_INPUTS, onSubmit);
 
+  const validInputs = () => inputs?.email && inputs?.password;
+
   return (
     <div className='auth-page'>
       <div className='auth-page__form'>
@@ -54,7 +56,12 @@ const Login = () => {
           </Link>
         </div>
 
-        <CustomButton buttonType='primary' action={handleSubmit} loading={loading}>
+        <CustomButton
+          buttonType='primary'
+          action={handleSubmit}
+          loading={loading}
+          disabled={!validInputs()}
+        >
           Sign In
         </CustomButton>
       </div>
