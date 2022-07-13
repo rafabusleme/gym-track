@@ -1,0 +1,36 @@
+@import '../../../theme/variables.scss';
+@import '../../../theme/breakpoints.scss';
+
+.custom-button {
+  box-sizing: border-box;
+  width: 100%;
+  font-family: $font-family;
+  font-size: 14px;
+  padding: 14px 20px;
+  border: none;
+  border-radius: 32px;
+  cursor: pointer;
+
+  &--primary {
+    color: $tertiary-color;
+    background-color: $secondary-color;
+    &:hover { background-color: $primary-color; }
+  }
+
+  &--secondary {
+    background-color: $secondary-color;
+    color: $primary-color;
+    border: 1px solid $tertiary-color;
+    &:hover { background-color: $quaternary-color; }
+  }
+
+  &__loading {
+    &--primary {
+      color: $primary-color;
+    }
+
+    &--secondary {
+      color: $secondary-color;
+    }
+  }
+}
