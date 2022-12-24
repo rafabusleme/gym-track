@@ -42,6 +42,12 @@ const SignUp = () => {
     if (!validation.confirmPassIsFill) return SIGN_UP_ERRORS['required'];
   };
 
+  const handleKeyPress = async (event: React.KeyboardEvent) => {
+    if (event.key === 'Enter' && isValidForm()) {
+      await handleSubmit(event);
+    }
+  };
+
   return (
     <div className='auth-page'>
       <div className='auth-page__form'>
@@ -53,6 +59,7 @@ const SignUp = () => {
             label='Email'
             variant='standard'
             onChange={handleInputChange}
+            onKeyPress={handleKeyPress}
             value={inputs.email}
             required
           />
@@ -63,6 +70,7 @@ const SignUp = () => {
             variant='standard'
             type='password'
             onChange={handleInputChange}
+            onKeyPress={handleKeyPress}
             value={inputs.password}
             required
           />
@@ -74,6 +82,7 @@ const SignUp = () => {
             variant='standard'
             type='password'
             onChange={handleInputChange}
+            onKeyPress={handleKeyPress}
             value={inputs.passwordConfirm}
             helperText={displayError()}
             required

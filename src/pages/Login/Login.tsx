@@ -23,6 +23,12 @@ const Login = () => {
 
   const validInputs = () => inputs?.email && inputs?.password;
 
+  const handleKeyPress = async (event: React.KeyboardEvent) => {
+    if (event.key === 'Enter' && validInputs()) {
+      await handleSubmit(event);
+    }
+  };
+
   return (
     <div className='auth-page'>
       <div className='auth-page__form'>
@@ -34,6 +40,7 @@ const Login = () => {
             label='Email'
             variant='standard'
             onChange={handleInputChange}
+            onKeyPress={handleKeyPress}
             value={inputs.email}
             required
           />
@@ -43,6 +50,7 @@ const Login = () => {
             name='password'
             variant='standard'
             type='password'
+            onKeyPress={handleKeyPress}
             onChange={handleInputChange}
             value={inputs.password}
             required
