@@ -8,7 +8,8 @@
   width: 100%;
   padding: 20px 20px 60px;
   box-shadow: $box-shadow;
-  background-color: $secondary-color;
+  background-color: $quaternary-color;
+  border-right: 1px solid $primary-color;
   white-space: nowrap;
 
   &__header {

@@ -8,19 +8,21 @@
   .app-layout__navbar {
     width: 20%;
     min-width: 200px;
+    height: 100%;
   }
-  
+
   .app-layout__content {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 80%;
     height: 100%;
-    background-color: $quaternary-color;
+    background-color: $primary-color;
 
-    .app-layout__content__main { 
+    .app-layout__content__main {
       display: flex;
       width: 100%;
       height: 95%;
+      overflow-y: scroll;
     }
 
     .app-layout__content__footer {
