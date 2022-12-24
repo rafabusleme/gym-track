@@ -1,5 +1,53 @@
+@import '../../theme/variables.scss';
+@import '../../theme/breakpoints.scss';
+
 .trainings {
-  justify-content: center;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  font-size: 40px;
+  padding: 0 20px;
+
+  &__filters {
+    width: 76%;
+    padding: 10px 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @media screen and (max-width: $tablet) {
+      width: 100%;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+    }
+  }
+
+  &__content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__time-picker {
+    width: 50%;
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 10px;
+
+    @media screen and (max-width: $tablet) {
+      width: 100%;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  &__sessions {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
 }
