@@ -19,58 +19,56 @@ import AuthLayout from '../shared/layouts/AuthLayout/AuthLayout';
 
 const AppRoutes = () => {
   return (
-    <>
-      <Routes>
-        <Route
-          path={HOME_ROUTE}
-          element={
-            <AppLayout>
-              <Home />
-            </AppLayout>
-          }
-        />
-        <Route
-          path={TRAININGS_ROUTE}
-          element={
-            <AppLayout>
-              <Trainings />
-            </AppLayout>
-          }
-        />
-        <Route
-          path={METRICS_ROUTE}
-          element={
-            <AppLayout>
-              <Metrics />
-            </AppLayout>
-          }
-        />
-        <Route
-          path={LOGIN_ROUTE}
-          element={
-            <AuthLayout>
-              <Login />
-            </AuthLayout>
-          }
-        />
-        <Route
-          path={SIGN_UP_ROUTE}
-          element={
-            <AuthLayout>
-              <SignUp />
-            </AuthLayout>
-          }
-        />
-        <Route
-          path='*'
-          element={
-            <AuthLayout>
-              <Login />
-            </AuthLayout>
-          }
-        />
-      </Routes>
-    </>
+    <Routes>
+      <Route
+        path={HOME_ROUTE}
+        element={
+          <AppLayout>
+            <Home />
+          </AppLayout>
+        }
+      />
+      <Route
+        path={TRAININGS_ROUTE}
+        element={
+          <AppLayout>
+            <Trainings />
+          </AppLayout>
+        }
+      />
+      <Route
+        path={METRICS_ROUTE}
+        element={
+          <AppLayout>
+            <Metrics />
+          </AppLayout>
+        }
+      />
+      <Route
+        path={LOGIN_ROUTE}
+        element={
+          <AuthLayout>
+            <Login />
+          </AuthLayout>
+        }
+      />
+      <Route
+        path={SIGN_UP_ROUTE}
+        element={
+          <AuthLayout>
+            <SignUp />
+          </AuthLayout>
+        }
+      />
+      <Route
+        path='*'
+        element={
+          <AuthLayout>
+            <Login />
+          </AuthLayout>
+        }
+      />
+    </Routes>
   );
 };
 
